@@ -1,0 +1,19 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>神评论</view>
+  </view>
+</view>
+<view class="text-center margin-top">
+  <text class="text-grey text-xl">别问我为什么划船不用桨,因为全靠浪!</text>
+</view>
+<view class="margin-xl padding-xl bg-white radius shadow-lg">
+  <view class="flex justify-center">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 登录神评论 </button>
+    <block wx:else>
+      <view class='text-center'>
+        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
+        <view class="padding">{{userInfo.nickName}}</view>
+      </view>
+    </block>
+  </view>
+</view>

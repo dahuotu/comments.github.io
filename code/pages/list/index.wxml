@@ -1,0 +1,30 @@
+<!--pages/list/index.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      神评回复
+    </navigator>
+    <view class='action'>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class='search-form round'>
+    <text class="icon-search"></text>
+    <input type="text" placeholder="搜索神评回复" confirm-type="search" bindinput="searchKeys"></input>
+  </view>
+</view>
+<view class="padding"></view>
+<view class="padding text-center">
+  <block wx:for="{{datas}}" wx:key="{{key}}" id="{{item.id}}">
+    <view class="padding-lr bg-white margin-top">
+      <view class="solid-bottom padding text-left">
+        {{item.content}}
+      </view>
+      <view class="padding text-center">
+        <button open-type="share" data-id="{{item.id}}" class="bg-green shadow-blur button-hover icon-share lg"> 转发
+        </button>
+      </view>
+    </view>
+  </block>
+</view>

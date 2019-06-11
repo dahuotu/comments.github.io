@@ -1,0 +1,22 @@
+<!--pages/view/index.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='action' hover-class="none" bindtap='linkHome'>
+      <text class='icon-home'></text> 回首页
+    </view>
+    <view class='action'>
+    </view>
+  </view>
+</view>
+<view class="padding text-center">
+  <block wx:for="{{datas}}" wx:key="{{key}}" id="{{item.id}}">
+    <view class="padding-lr bg-white margin-top">
+      <view class="solid-bottom padding text-left">
+        {{item.content}}
+      </view>
+      <view class="padding text-center">
+        <button data-copy="{{item.content}}" class="bg-orange button-hover icon-copy lg" bindtap="onCopy"> 复制</button>
+      </view>
+    </view>
+  </block>
+</view>
